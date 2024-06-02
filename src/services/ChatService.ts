@@ -1,14 +1,14 @@
-import { Inject, Service } from 'typedi';
-import IChatService from './Interfaces/IChatService';
 import { Request } from 'express';
 import { ParamsDictionary } from 'express-serve-static-core';
-import { ParsedQs } from 'qs';
 import type { Document } from 'langchain/document';
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai';
 import { PineconeStore } from 'langchain/vectorstores/pinecone';
-import { PINECONE_INDEX_NAME,PINECONE_NAME_SPACE } from '../config/pinecone';
-import { pinecone } from '../utils/pinecone-client';
+import { ParsedQs } from 'qs';
+import { Service } from 'typedi';
+import { PINECONE_INDEX_NAME, PINECONE_NAME_SPACE } from '../config/pinecone';
 import { makeChain } from '../utils/makechain';
+import { pinecone } from '../utils/pinecone-client';
+import IChatService from './Interfaces/IChatService';
 
 
 
