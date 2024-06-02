@@ -1,12 +1,6 @@
+import { Service } from 'typedi';
 import { Genre } from '../models/Genre';
-import Database from '../config/database';
-import { Op, QueryTypes, literal, OrderItem, Sequelize } from 'sequelize';
-import Container, { Service } from 'typedi';
 import { BaseRepository } from './BaseRepository';
-import { IRecommenderRepository } from './Interfaces/IRecommenderRepository';
-import { WatchHistory } from '../models/WatchHistory';
-import { WatchLater } from '../models/WatchLater';
-import { MovieFavorite } from '../models/MovieFavorite';
 import { IGenreRepository } from './Interfaces/IGenreRepository';
 
 @Service()

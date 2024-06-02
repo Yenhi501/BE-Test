@@ -1,13 +1,13 @@
-import Container, { Inject, Service } from 'typedi';
-import { PaymentRepository } from '../repository/PaymentRepository';
-import { Payment } from '../models/Payment';
-import express, { Request } from 'express';
+import { Request } from 'express';
 import { Op } from 'sequelize';
-import { IPaymentRepository } from '../repository/Interfaces/IPaymentRepository';
-import { IPaymentService } from './Interfaces/IPaymentService';
-import { UserRepository } from '../repository/UserRepository';
-import { IUserRepository } from '../repository/Interfaces/IUserRepository';
+import { Inject, Service } from 'typedi';
+import { Payment } from '../models/Payment';
 import { SubscriptionType } from '../models/SubscriptionType';
+import { IPaymentRepository } from '../repository/Interfaces/IPaymentRepository';
+import { IUserRepository } from '../repository/Interfaces/IUserRepository';
+import { PaymentRepository } from '../repository/PaymentRepository';
+import { UserRepository } from '../repository/UserRepository';
+import { IPaymentService } from './Interfaces/IPaymentService';
 
 interface PaymentAttributes {
 	type: string;

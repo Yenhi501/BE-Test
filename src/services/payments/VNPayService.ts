@@ -1,15 +1,13 @@
-import express from 'express';
-import crypto from 'crypto';
-import qs from 'qs';
 import { validate } from 'class-validator';
-var sortObj = require('sort-object');
-import { Service } from 'typedi';
-import { VNPayPaymentUrlDTO } from '../../dto/VNPayPaymentUrlDTO';
-import { ConfigVNPayDTO } from '../../dto/ConfigVNPayDTO';
+import crypto from 'crypto';
 import timezone from 'moment-timezone';
+import { Service } from 'typedi';
+import { ConfigVNPayDTO } from '../../dto/ConfigVNPayDTO';
 import { ReturnQueryFromVNPayDTO } from '../../dto/ReturnQueryFromVNPayDTO';
+import { VNPayPaymentUrlDTO } from '../../dto/VNPayPaymentUrlDTO';
 import { VerifyReturnUrlDTO } from '../../dto/VerifyReturnUrlDTO';
 import { VnpLocale } from '../../enums';
+var sortObj = require('sort-object');
 
 
 @Service()

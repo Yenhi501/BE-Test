@@ -1,29 +1,26 @@
-import 'reflect-metadata';
-import express, { Application, Request, Response } from 'express';
-import cluster from 'cluster';
-import { cpus } from 'os';
-import Database from './config/database';
-import UserRouter from './route/UserRoutes';
-import MovieRouter from './route/MovieRoutes';
-import AuthenticationRouter from './route/AuthenticationRoutes';
 import cors from 'cors';
-import HomeRouter from './route/HomeRoutes';
-import IndividualRouter from './route/IndividualRoutes';
-import EpisodeRouter from './route/EpisodeRoutes';
-import SubscriptionRouter from './route/SubscriptionRoutes';
-import PaymentRouter from './route/PaymentRoutes';
-import GenreRouter from './route/GenreRoutes';
-import CommentRouter from './route/CommentRoutes';
-import RatingRouter from './route/RatingRoutes';
-import StatisticalRouter from './route/StatisticalRoutes';
+import express, { Application, Request, Response } from 'express';
+import * as fs from 'fs';
+import passport from 'passport';
+import 'reflect-metadata';
 import swaggerUi from 'swagger-ui-express';
 import yaml from 'yaml';
-import * as fs from 'fs';
-import * as https from 'https';
+import Database from './config/database';
+import './middleware/Passport';
+import AuthenticationRouter from './route/AuthenticationRoutes';
 import ChatRoutes from './route/ChatRoutes';
+import CommentRouter from './route/CommentRoutes';
+import EpisodeRouter from './route/EpisodeRoutes';
+import GenreRouter from './route/GenreRoutes';
+import HomeRouter from './route/HomeRoutes';
+import IndividualRouter from './route/IndividualRoutes';
+import MovieRouter from './route/MovieRoutes';
+import PaymentRouter from './route/PaymentRoutes';
+import RatingRouter from './route/RatingRoutes';
+import StatisticalRouter from './route/StatisticalRoutes';
+import SubscriptionRouter from './route/SubscriptionRoutes';
+import UserRouter from './route/UserRoutes';
 import { setupSchedule } from './utils/ScheduleTask';
-import './middleware/Passport'
-import passport from 'passport';
 
 class App {
 	public app: Application;
