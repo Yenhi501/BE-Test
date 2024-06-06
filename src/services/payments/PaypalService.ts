@@ -99,7 +99,7 @@ export class PaypalService {
                 
                 const partialObject: Partial<Payment> = {
                     orderInfo: 'User_' + userId,
-                    status: 'completed',
+                    status: 'Completed',
                     isPayment: true,
                     transactionId: token,
                 };

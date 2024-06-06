@@ -92,7 +92,7 @@ export class PaymentController {
 			const nameSubscription = subInfo?.subscriptionType.getDataValue('name');
 
 			let priceReduction = 0;
-			if(newSubscriptionTypeId > currentSubscriptionTypeId){ // nếu gói mới > gói hiện tại thì giảm giá khi muốn nâng cấp gói
+			if(newSubscriptionTypeId > currentSubscriptionTypeId){ // nếu gói mới > gói hiện tại thì giảm giá khi muốn nâng cấp gói	
 				let priceReduction = await this.paymentService.getRemainingPriceOfUser(userId);
 				if(!priceReduction || priceReduction <=0){
 					priceReduction = 0;
