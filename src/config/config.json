@@ -1,12 +1,15 @@
 {
   "development": {
-	"username": "root",
-    "password": "root",
+	"username": "datn10diem",
+    "password": "123456789Aa",
     "database": "movies_database",
-    "host": "db",
-    "port": 5432,
-    "dialect": "postgres"
-  },
+    "host": "movies-db.postgres.database.azure.com",
+    "port": 5432, 
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": true
+   }
+},
   "test": {
     "username": "root",
     "password": "root",

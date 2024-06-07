@@ -1,14 +1,13 @@
 import { Request, Response } from 'express';
-import Container, { Inject } from 'typedi';
-import { VNPayService } from '../services/payments/VNPayService';
-import { text } from 'node:stream/consumers';
-import { MomoService } from '../services/payments/MomoService';
-import { PaypalService } from '../services/payments/PaypalService';
+import timezone from 'moment-timezone';
+import Container from 'typedi';
 import { Payment } from '../models/Payment';
 import { PaymentService } from '../services/PaymentService';
-import timezone from 'moment-timezone';
 import { SubscriptionService } from '../services/SubscriptionService';
 import { UserService } from '../services/UserService';
+import { MomoService } from '../services/payments/MomoService';
+import { PaypalService } from '../services/payments/PaypalService';
+import { VNPayService } from '../services/payments/VNPayService';
 
 export class PaymentController {
 	static getExchangeRates() {
