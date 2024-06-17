@@ -1,9 +1,9 @@
 {
   "development": {
-	"username": "datn10diem",
+	"username": "datn",
     "password": "123456789Aa",
     "database": "movies_database",
-    "host": "movies-db.postgres.database.azure.com",
+    "host": "movie-db.postgres.database.azure.com",
     "port": 5432, 
     "dialect": "postgres",
     "dialectOptions": {
