@@ -94,16 +94,20 @@ export class PaypalService {
 				}
 			);
 			if (response.data.status === 'COMPLETED') {
+				const payment = await this.paymentService.findPaymentByTransactionId(
+					token
+				);
+                const userId = payment.getDataValue('userId');
 				const partialObject: Partial<Payment> = {
-					orderInfo: JSON.stringify(response.data),
-					status: 'Success',
+					// orderInfo: JSON.stringify(response.data),
+					orderInfo: 'User_'+userId,
+					userId: userId,
+					status: 'completed',
 					isPayment: true,
 					transactionId: token,
 				};
 				await this.paymentService.addOrEditPayment(partialObject);
-				const payment = await this.paymentService.findPaymentByTransactionId(
-					token
-				);
+				
 
 				await this.subscriptionService.updateSubscription(
 					payment.getDataValue('userId'),
