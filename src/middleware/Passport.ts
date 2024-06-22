@@ -1,12 +1,8 @@
 import passport from "passport";
 import passportGoogle from "passport-google-oauth20";
-import { v4 as uuidv4 } from 'uuid';
-import { Request, Response } from 'express';
-import { User } from "../models/User";
 import Container from "typedi";
-import { UserService } from "../services/UserService";
 import { AuthenticationService } from "../services/AuthenticationService";
-import { rescheduleJob } from "node-schedule";
+import { UserService } from "../services/UserService";
 const GoogleStrategy = passportGoogle.Strategy;
 
 require('dotenv').config();
