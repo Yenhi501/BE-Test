@@ -193,7 +193,7 @@ export class MovieRepository extends BaseRepository<Movie> implements IMovieRepo
 	): Promise<Movie> {
 		try {
 			const newMovie = await Movie.create({
-				id: id,
+				movieId: id,
 				title: title,
 				description: description,
 				releaseDate: releaseDate,

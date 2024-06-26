@@ -261,7 +261,7 @@ export class MovieService implements IMovieService {
 				isSeries
 			} = req.body;
 			const movies = await this.getAllMovies();
-			const id = Number(movies[0].id) + 1;
+			const id = Number(movies[0].movieId) + 1;
 			const newMovie = await this.movieRepository.createMovie(
 				title,
 				description,
