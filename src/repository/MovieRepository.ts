@@ -151,7 +151,7 @@ export class MovieRepository extends BaseRepository<Movie> implements IMovieRepo
 						through: { attributes: [] },
 					},
 				],
-				order: [['movie_id', 'ASC']],
+				order: [['movie_id', 'DESC']],
 			});
 			return movies;
 		} catch (error) {
@@ -188,7 +188,8 @@ export class MovieRepository extends BaseRepository<Movie> implements IMovieRepo
 		episodeNum: number,
 		level: number,
 		backgroundURL: string,
-		isSeries: boolean
+		isSeries: boolean,
+		id: number
 	): Promise<Movie> {
 		try {
 			const newMovie = await Movie.create({

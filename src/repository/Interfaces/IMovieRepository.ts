@@ -28,7 +28,8 @@ export interface IMovieRepository extends BaseInterface {
 		episodeNum: number,
 		level: number,
 		backgroundURL: string,
-		isSeries: boolean
+		isSeries: boolean,
+		id:number
 	): Promise<Movie>;
 	updateMovie(movieId: number, updatedData: Partial<Movie>): Promise<[number, Movie[]]>;
 	getMoviesTrending(): Promise<Movie[]>;
