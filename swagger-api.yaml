@@ -3,7 +3,7 @@ info:
   description: |
     API Document for Movie Website
   version: '1.0.0'
-  title: PBL6-Movie Website API
+  title: DATN-Movie Website API
   contact:
     email: example@email.com
 servers:

@@ -260,6 +260,8 @@ export class MovieService implements IMovieService {
 				level,
 				isSeries
 			} = req.body;
+			const movies = await this.getAllMovies();
+			const id = Number(movies[0].movieId) + 1;
 			const newMovie = await this.movieRepository.createMovie(
 				title,
 				description,
@@ -271,7 +273,8 @@ export class MovieService implements IMovieService {
 				episodeNum,
 				level,
 				backgroundURL,
-				isSeries
+				isSeries,
+				id
 			);
 			const actorIds = req.body.actorIds;
 			const directorIds = req.body.directorIds;
@@ -382,11 +385,11 @@ export class MovieService implements IMovieService {
 	}
 
 	async getMoviesForVip(): Promise<Movie[]> {
-		const cacheKey = 'moviesForVip';
-		const cachedResult = await this.redis.get(cacheKey);
-		if (cachedResult) {
-			return JSON.parse(cachedResult);
-		}
+		// const cacheKey = 'moviesForVip';
+		// const cachedResult = await this.redis.get(cacheKey);
+		// if (cachedResult) {
+		// 	return JSON.parse(cachedResult);
+		// }
 		try {
 			let movies = await this.movieRepository.getMoviesForVip();
 			for (const movie of movies) {
@@ -396,7 +399,7 @@ export class MovieService implements IMovieService {
 					'movies/'.concat(movie.movieId.toString(), '/background.jpg')
 				);
 			}
-			await this.redis.set(cacheKey, JSON.stringify(movies), 'EX', 60*60);
+			// await this.redis.set(cacheKey, JSON.stringify(movies), 'EX', 60*60);
 			return movies;
 		} catch (error) {
 			console.log(error);
